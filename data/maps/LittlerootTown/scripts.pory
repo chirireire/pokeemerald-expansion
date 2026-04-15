@@ -1070,3 +1070,65 @@ if(var(VAR_RESULT) == YES){
 	call(Common_EventScript_NameReceivedBoxMon)
 }
 }
+script LittleRootTown_EventScript_startertest1_grassball1 {
+lockall
+showmonpic (SPECIES_TREECKO, 10, 3)
+msgbox ("The grass Pokémon, TREECKO." , MSGBOX_YESNO)
+if(var(VAR_RESULT) == YES){
+	givemon(SPECIES_TREECKO, 5)
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox ("You chose TREECKO!")
+	removeobject(10)
+	setflag(FLAG_GRASSSTARTER)
+	call(NicknamePartyMon)
+	}
+	elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox ("You chose TREECKO!")
+	removeobject(10)
+	setflag(FLAG_GRASSSTARTER)
+	call(NicknameBoxMon)
+	}
+else{
+	hidemonpic
+	msgbox ("No room.")
+}
+}else{
+	hidemonpic
+}
+waitmessage
+releaseall
+end
+}
+script LittleRootTown_EventScript_startertest1_waterball1 {
+lockall
+showmonpic (SPECIES_MUDKIP, 10, 3)
+msgbox ("The water Pokémon, MUDKIP." , MSGBOX_YESNO)
+if(var(VAR_RESULT) == YES){
+	givemon(SPECIES_MUDKIP, 5)
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox ("You chose MUDKIP!")
+	removeobject(11)
+	setflag(FLAG_WATERSTARTER)
+	call(NicknamePartyMon)
+	}
+	elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox ("You chose MUDKIP!")
+	removeobject(11)
+	setflag(FLAG_WATERSTARTER)
+	call(NicknameBoxMon)
+	}
+else{
+	hidemonpic
+	msgbox ("No room.")
+}
+}else{
+	hidemonpic
+}
+waitmessage
+releaseall
+end
+}
