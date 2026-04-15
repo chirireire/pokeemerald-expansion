@@ -1022,3 +1022,51 @@ script LittlerootTown_EventScript_TestSign {
     msgbox("I'm in...")
     releaseall
 }
+script LittleRootTown_EventScript_startertest1_fireball1 {
+lockall
+showmonpic (SPECIES_TORCHIC, 10, 3)
+msgbox ("The fire Pokémon, TORCHIC." , MSGBOX_YESNO)
+if(var(VAR_RESULT) == YES){
+	givemon(SPECIES_TORCHIC, 5)
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox ("You chose TORCHIC!")
+	removeobject(9)
+	setflag(FLAG_FIRESTARTER)
+	call(NicknamePartyMon)
+	}
+	elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox ("You chose TORCHIC!")
+	removeobject(9)
+	setflag(FLAG_FIRESTARTER)
+	call(NicknameBoxMon)
+	}
+else{
+	hidemonpic
+	msgbox ("No room.")
+}
+}else{
+	hidemonpic
+}
+waitmessage
+releaseall
+end
+}
+
+script NicknamePartyMon {
+msgbox ("Name it?" , MSGBOX_YESNO)
+hidemonpic
+if(var(VAR_RESULT) == YES){
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+}
+}
+
+script NicknameBoxMon {
+	msgbox ("Name it?" , MSGBOX_YESNO)
+hidemonpic
+if(var(VAR_RESULT) == YES){
+	call(Common_EventScript_NameReceivedBoxMon)
+}
+}
