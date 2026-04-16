@@ -2041,149 +2041,170 @@ LittlerootTown_EventScript_TestSign::
 	return
 
 
-LittleRootTown_EventScript_startertest1_fireball1::
-# 1026 "data/maps/LittlerootTown/scripts.pory"
-	lockall
-# 1027 "data/maps/LittlerootTown/scripts.pory"
-	showmonpic SPECIES_TORCHIC, 10, 3
-# 1028 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittleRootTown_EventScript_startertest1_fireball1_Text_0, MSGBOX_YESNO
-# 1029 "data/maps/LittlerootTown/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq LittleRootTown_EventScript_startertest1_fireball1_2
-# 1050 "data/maps/LittlerootTown/scripts.pory"
-	hidemonpic
-LittleRootTown_EventScript_startertest1_fireball1_1:
-# 1052 "data/maps/LittlerootTown/scripts.pory"
-	waitmessage
-# 1053 "data/maps/LittlerootTown/scripts.pory"
-	releaseall
-	end
-
-LittleRootTown_EventScript_startertest1_fireball1_2:
-# 1030 "data/maps/LittlerootTown/scripts.pory"
-	givemon SPECIES_TORCHIC, 5
-# 1031 "data/maps/LittlerootTown/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq LittleRootTown_EventScript_startertest1_fireball1_5
-# 1038 "data/maps/LittlerootTown/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq LittleRootTown_EventScript_startertest1_fireball1_6
-# 1046 "data/maps/LittlerootTown/scripts.pory"
-	hidemonpic
-# 1047 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittleRootTown_EventScript_startertest1_fireball1_Text_2
-	goto LittleRootTown_EventScript_startertest1_fireball1_1
-
-LittleRootTown_EventScript_startertest1_fireball1_5:
-# 1032 "data/maps/LittlerootTown/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 1033 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittleRootTown_EventScript_startertest1_fireball1_Text_1
-# 1034 "data/maps/LittlerootTown/scripts.pory"
-	removeobject 9
-# 1035 "data/maps/LittlerootTown/scripts.pory"
-	setflag FLAG_FIRESTARTER
-# 1036 "data/maps/LittlerootTown/scripts.pory"
-	call NicknamePartyMon
-	goto LittleRootTown_EventScript_startertest1_fireball1_1
-
-LittleRootTown_EventScript_startertest1_fireball1_6:
-# 1039 "data/maps/LittlerootTown/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 1040 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittleRootTown_EventScript_startertest1_fireball1_Text_1
-# 1041 "data/maps/LittlerootTown/scripts.pory"
-	removeobject 9
-# 1042 "data/maps/LittlerootTown/scripts.pory"
-	setflag FLAG_FIRESTARTER
-# 1043 "data/maps/LittlerootTown/scripts.pory"
-	call NicknameBoxMon
-	goto LittleRootTown_EventScript_startertest1_fireball1_1
-
-
 NicknamePartyMon::
-# 1058 "data/maps/LittlerootTown/scripts.pory"
+# 1026 "data/maps/LittlerootTown/scripts.pory"
 	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
-# 1059 "data/maps/LittlerootTown/scripts.pory"
+# 1027 "data/maps/LittlerootTown/scripts.pory"
 	hidemonpic
-# 1060 "data/maps/LittlerootTown/scripts.pory"
+# 1028 "data/maps/LittlerootTown/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePartyMon_1
 	return
 
 NicknamePartyMon_1:
-# 1061 "data/maps/LittlerootTown/scripts.pory"
+# 1029 "data/maps/LittlerootTown/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 1062 "data/maps/LittlerootTown/scripts.pory"
+# 1030 "data/maps/LittlerootTown/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
 NicknameBoxMon::
-# 1067 "data/maps/LittlerootTown/scripts.pory"
+# 1035 "data/maps/LittlerootTown/scripts.pory"
 	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
-# 1068 "data/maps/LittlerootTown/scripts.pory"
+# 1036 "data/maps/LittlerootTown/scripts.pory"
 	hidemonpic
-# 1069 "data/maps/LittlerootTown/scripts.pory"
+# 1037 "data/maps/LittlerootTown/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon_1
 	return
 
 NicknameBoxMon_1:
-# 1070 "data/maps/LittlerootTown/scripts.pory"
+# 1038 "data/maps/LittlerootTown/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	return
 
 
-LittleRootTown_EventScript_startertest1_grassball1::
-# 1074 "data/maps/LittlerootTown/scripts.pory"
+LittleRootTown_EventScript_startertest1_fireball1::
+# 1042 "data/maps/LittlerootTown/scripts.pory"
 	lockall
+# 1043 "data/maps/LittlerootTown/scripts.pory"
+	showmonpic SPECIES_TORCHIC, 10, 3
+# 1044 "data/maps/LittlerootTown/scripts.pory"
+	goto_if_unset FLAG_CHOSE_GRASS, LittleRootTown_EventScript_startertest1_fireball1_4
+LittleRootTown_EventScript_startertest1_fireball1_3:
+# 1071 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittleRootTown_EventScript_startertest1_fireball1_Text_3
+# 1072 "data/maps/LittlerootTown/scripts.pory"
+	waitmessage
+# 1073 "data/maps/LittlerootTown/scripts.pory"
+	hidemonpic
+LittleRootTown_EventScript_startertest1_fireball1_1:
 # 1075 "data/maps/LittlerootTown/scripts.pory"
-	showmonpic SPECIES_TREECKO, 10, 3
+	waitmessage
 # 1076 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittleRootTown_EventScript_startertest1_grassball1_Text_0, MSGBOX_YESNO
-# 1077 "data/maps/LittlerootTown/scripts.pory"
+	releaseall
+	end
+
+LittleRootTown_EventScript_startertest1_fireball1_2:
+# 1045 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittleRootTown_EventScript_startertest1_fireball1_Text_0, MSGBOX_YESNO
+# 1046 "data/maps/LittlerootTown/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq LittleRootTown_EventScript_startertest1_grassball1_2
-# 1098 "data/maps/LittlerootTown/scripts.pory"
+	goto_if_eq LittleRootTown_EventScript_startertest1_fireball1_7
+# 1067 "data/maps/LittlerootTown/scripts.pory"
+	hidemonpic
+	goto LittleRootTown_EventScript_startertest1_fireball1_1
+
+LittleRootTown_EventScript_startertest1_fireball1_4:
+# 1044 "data/maps/LittlerootTown/scripts.pory"
+	goto_if_unset FLAG_CHOSE_WATER, LittleRootTown_EventScript_startertest1_fireball1_2
+	goto LittleRootTown_EventScript_startertest1_fireball1_3
+
+LittleRootTown_EventScript_startertest1_fireball1_7:
+# 1047 "data/maps/LittlerootTown/scripts.pory"
+	givemon SPECIES_TORCHIC, 5
+# 1048 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq LittleRootTown_EventScript_startertest1_fireball1_10
+# 1055 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq LittleRootTown_EventScript_startertest1_fireball1_11
+# 1063 "data/maps/LittlerootTown/scripts.pory"
+	hidemonpic
+# 1064 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittleRootTown_EventScript_startertest1_fireball1_Text_2
+	goto LittleRootTown_EventScript_startertest1_fireball1_1
+
+LittleRootTown_EventScript_startertest1_fireball1_10:
+# 1049 "data/maps/LittlerootTown/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 1050 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittleRootTown_EventScript_startertest1_fireball1_Text_1
+# 1051 "data/maps/LittlerootTown/scripts.pory"
+	removeobject 9
+# 1052 "data/maps/LittlerootTown/scripts.pory"
+	setflag FLAG_CHOSE_FIRE
+# 1053 "data/maps/LittlerootTown/scripts.pory"
+	call NicknamePartyMon
+	goto LittleRootTown_EventScript_startertest1_fireball1_1
+
+LittleRootTown_EventScript_startertest1_fireball1_11:
+# 1056 "data/maps/LittlerootTown/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 1057 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittleRootTown_EventScript_startertest1_fireball1_Text_1
+# 1058 "data/maps/LittlerootTown/scripts.pory"
+	removeobject 9
+# 1059 "data/maps/LittlerootTown/scripts.pory"
+	setflag FLAG_CHOSE_FIRE
+# 1060 "data/maps/LittlerootTown/scripts.pory"
+	call NicknameBoxMon
+	goto LittleRootTown_EventScript_startertest1_fireball1_1
+
+
+LittleRootTown_EventScript_startertest1_grassball1::
+# 1080 "data/maps/LittlerootTown/scripts.pory"
+	lockall
+# 1081 "data/maps/LittlerootTown/scripts.pory"
+	showmonpic SPECIES_TREECKO, 10, 3
+# 1082 "data/maps/LittlerootTown/scripts.pory"
+	goto_if_unset FLAG_CHOSE_FIRE, LittleRootTown_EventScript_startertest1_grassball1_4
+LittleRootTown_EventScript_startertest1_grassball1_3:
+# 1109 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittleRootTown_EventScript_startertest1_grassball1_Text_2
+# 1110 "data/maps/LittlerootTown/scripts.pory"
+	waitmessage
+# 1111 "data/maps/LittlerootTown/scripts.pory"
 	hidemonpic
 LittleRootTown_EventScript_startertest1_grassball1_1:
-# 1100 "data/maps/LittlerootTown/scripts.pory"
+# 1113 "data/maps/LittlerootTown/scripts.pory"
 	waitmessage
-# 1101 "data/maps/LittlerootTown/scripts.pory"
+# 1114 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	end
 
 LittleRootTown_EventScript_startertest1_grassball1_2:
-# 1078 "data/maps/LittlerootTown/scripts.pory"
-	givemon SPECIES_TREECKO, 5
-# 1079 "data/maps/LittlerootTown/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq LittleRootTown_EventScript_startertest1_grassball1_5
-# 1086 "data/maps/LittlerootTown/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq LittleRootTown_EventScript_startertest1_grassball1_6
-# 1094 "data/maps/LittlerootTown/scripts.pory"
+# 1083 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittleRootTown_EventScript_startertest1_grassball1_Text_0, MSGBOX_YESNO
+# 1084 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq LittleRootTown_EventScript_startertest1_grassball1_7
+# 1105 "data/maps/LittlerootTown/scripts.pory"
 	hidemonpic
-# 1095 "data/maps/LittlerootTown/scripts.pory"
+	goto LittleRootTown_EventScript_startertest1_grassball1_1
+
+LittleRootTown_EventScript_startertest1_grassball1_4:
+# 1082 "data/maps/LittlerootTown/scripts.pory"
+	goto_if_unset FLAG_CHOSE_WATER, LittleRootTown_EventScript_startertest1_grassball1_2
+	goto LittleRootTown_EventScript_startertest1_grassball1_3
+
+LittleRootTown_EventScript_startertest1_grassball1_7:
+# 1085 "data/maps/LittlerootTown/scripts.pory"
+	givemon SPECIES_TREECKO, 5
+# 1086 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq LittleRootTown_EventScript_startertest1_grassball1_10
+# 1093 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq LittleRootTown_EventScript_startertest1_grassball1_11
+# 1101 "data/maps/LittlerootTown/scripts.pory"
+	hidemonpic
+# 1102 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittleRootTown_EventScript_startertest1_fireball1_Text_2
 	goto LittleRootTown_EventScript_startertest1_grassball1_1
 
-LittleRootTown_EventScript_startertest1_grassball1_5:
-# 1080 "data/maps/LittlerootTown/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 1081 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittleRootTown_EventScript_startertest1_grassball1_Text_1
-# 1082 "data/maps/LittlerootTown/scripts.pory"
-	removeobject 10
-# 1083 "data/maps/LittlerootTown/scripts.pory"
-	setflag FLAG_GRASSSTARTER
-# 1084 "data/maps/LittlerootTown/scripts.pory"
-	call NicknamePartyMon
-	goto LittleRootTown_EventScript_startertest1_grassball1_1
-
-LittleRootTown_EventScript_startertest1_grassball1_6:
+LittleRootTown_EventScript_startertest1_grassball1_10:
 # 1087 "data/maps/LittlerootTown/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 1088 "data/maps/LittlerootTown/scripts.pory"
@@ -2191,69 +2212,99 @@ LittleRootTown_EventScript_startertest1_grassball1_6:
 # 1089 "data/maps/LittlerootTown/scripts.pory"
 	removeobject 10
 # 1090 "data/maps/LittlerootTown/scripts.pory"
-	setflag FLAG_GRASSSTARTER
+	setflag FLAG_CHOSE_GRASS
 # 1091 "data/maps/LittlerootTown/scripts.pory"
+	call NicknamePartyMon
+	goto LittleRootTown_EventScript_startertest1_grassball1_1
+
+LittleRootTown_EventScript_startertest1_grassball1_11:
+# 1094 "data/maps/LittlerootTown/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 1095 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittleRootTown_EventScript_startertest1_grassball1_Text_1
+# 1096 "data/maps/LittlerootTown/scripts.pory"
+	removeobject 10
+# 1097 "data/maps/LittlerootTown/scripts.pory"
+	setflag FLAG_CHOSE_GRASS
+# 1098 "data/maps/LittlerootTown/scripts.pory"
 	call NicknameBoxMon
 	goto LittleRootTown_EventScript_startertest1_grassball1_1
 
 
 LittleRootTown_EventScript_startertest1_waterball1::
-# 1105 "data/maps/LittlerootTown/scripts.pory"
+# 1118 "data/maps/LittlerootTown/scripts.pory"
 	lockall
-# 1106 "data/maps/LittlerootTown/scripts.pory"
+# 1119 "data/maps/LittlerootTown/scripts.pory"
 	showmonpic SPECIES_MUDKIP, 10, 3
-# 1107 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittleRootTown_EventScript_startertest1_waterball1_Text_0, MSGBOX_YESNO
-# 1108 "data/maps/LittlerootTown/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq LittleRootTown_EventScript_startertest1_waterball1_2
-# 1129 "data/maps/LittlerootTown/scripts.pory"
+# 1120 "data/maps/LittlerootTown/scripts.pory"
+	goto_if_unset FLAG_CHOSE_FIRE, LittleRootTown_EventScript_startertest1_waterball1_4
+LittleRootTown_EventScript_startertest1_waterball1_3:
+# 1147 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittleRootTown_EventScript_startertest1_waterball1_Text_2
+# 1148 "data/maps/LittlerootTown/scripts.pory"
+	waitmessage
+# 1149 "data/maps/LittlerootTown/scripts.pory"
 	hidemonpic
 LittleRootTown_EventScript_startertest1_waterball1_1:
-# 1131 "data/maps/LittlerootTown/scripts.pory"
+# 1151 "data/maps/LittlerootTown/scripts.pory"
 	waitmessage
-# 1132 "data/maps/LittlerootTown/scripts.pory"
+# 1152 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	end
 
 LittleRootTown_EventScript_startertest1_waterball1_2:
-# 1109 "data/maps/LittlerootTown/scripts.pory"
-	givemon SPECIES_MUDKIP, 5
-# 1110 "data/maps/LittlerootTown/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq LittleRootTown_EventScript_startertest1_waterball1_5
-# 1117 "data/maps/LittlerootTown/scripts.pory"
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq LittleRootTown_EventScript_startertest1_waterball1_6
-# 1125 "data/maps/LittlerootTown/scripts.pory"
+# 1121 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittleRootTown_EventScript_startertest1_waterball1_Text_0, MSGBOX_YESNO
+# 1122 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq LittleRootTown_EventScript_startertest1_waterball1_7
+# 1143 "data/maps/LittlerootTown/scripts.pory"
 	hidemonpic
-# 1126 "data/maps/LittlerootTown/scripts.pory"
+	goto LittleRootTown_EventScript_startertest1_waterball1_1
+
+LittleRootTown_EventScript_startertest1_waterball1_4:
+# 1120 "data/maps/LittlerootTown/scripts.pory"
+	goto_if_unset FLAG_CHOSE_GRASS, LittleRootTown_EventScript_startertest1_waterball1_2
+	goto LittleRootTown_EventScript_startertest1_waterball1_3
+
+LittleRootTown_EventScript_startertest1_waterball1_7:
+# 1123 "data/maps/LittlerootTown/scripts.pory"
+	givemon SPECIES_MUDKIP, 5
+# 1124 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq LittleRootTown_EventScript_startertest1_waterball1_10
+# 1131 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq LittleRootTown_EventScript_startertest1_waterball1_11
+# 1139 "data/maps/LittlerootTown/scripts.pory"
+	hidemonpic
+# 1140 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittleRootTown_EventScript_startertest1_fireball1_Text_2
 	goto LittleRootTown_EventScript_startertest1_waterball1_1
 
-LittleRootTown_EventScript_startertest1_waterball1_5:
-# 1111 "data/maps/LittlerootTown/scripts.pory"
+LittleRootTown_EventScript_startertest1_waterball1_10:
+# 1125 "data/maps/LittlerootTown/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 1112 "data/maps/LittlerootTown/scripts.pory"
+# 1126 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittleRootTown_EventScript_startertest1_waterball1_Text_1
-# 1113 "data/maps/LittlerootTown/scripts.pory"
+# 1127 "data/maps/LittlerootTown/scripts.pory"
 	removeobject 11
-# 1114 "data/maps/LittlerootTown/scripts.pory"
-	setflag FLAG_WATERSTARTER
-# 1115 "data/maps/LittlerootTown/scripts.pory"
+# 1128 "data/maps/LittlerootTown/scripts.pory"
+	setflag FLAG_CHOSE_WATER
+# 1129 "data/maps/LittlerootTown/scripts.pory"
 	call NicknamePartyMon
 	goto LittleRootTown_EventScript_startertest1_waterball1_1
 
-LittleRootTown_EventScript_startertest1_waterball1_6:
-# 1118 "data/maps/LittlerootTown/scripts.pory"
+LittleRootTown_EventScript_startertest1_waterball1_11:
+# 1132 "data/maps/LittlerootTown/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 1119 "data/maps/LittlerootTown/scripts.pory"
+# 1133 "data/maps/LittlerootTown/scripts.pory"
 	msgbox LittleRootTown_EventScript_startertest1_waterball1_Text_1
-# 1120 "data/maps/LittlerootTown/scripts.pory"
+# 1134 "data/maps/LittlerootTown/scripts.pory"
 	removeobject 11
-# 1121 "data/maps/LittlerootTown/scripts.pory"
-	setflag FLAG_WATERSTARTER
-# 1122 "data/maps/LittlerootTown/scripts.pory"
+# 1135 "data/maps/LittlerootTown/scripts.pory"
+	setflag FLAG_CHOSE_WATER
+# 1136 "data/maps/LittlerootTown/scripts.pory"
 	call NicknameBoxMon
 	goto LittleRootTown_EventScript_startertest1_waterball1_1
 
@@ -2262,34 +2313,46 @@ LittlerootTown_EventScript_TestSign_Text_0:
 # 1022 "data/maps/LittlerootTown/scripts.pory"
 	.string "I'm in...$"
 
+NicknamePartyMon_Text_0:
+# 1026 "data/maps/LittlerootTown/scripts.pory"
+	.string "Name it?$"
+
 LittleRootTown_EventScript_startertest1_fireball1_Text_0:
-# 1028 "data/maps/LittlerootTown/scripts.pory"
+# 1045 "data/maps/LittlerootTown/scripts.pory"
 	.string "The fire Pokémon, TORCHIC.$"
 
 LittleRootTown_EventScript_startertest1_fireball1_Text_1:
-# 1033 "data/maps/LittlerootTown/scripts.pory"
+# 1050 "data/maps/LittlerootTown/scripts.pory"
 	.string "You chose TORCHIC!$"
 
 LittleRootTown_EventScript_startertest1_fireball1_Text_2:
-# 1047 "data/maps/LittlerootTown/scripts.pory"
+# 1064 "data/maps/LittlerootTown/scripts.pory"
 	.string "No room.$"
 
-NicknamePartyMon_Text_0:
-# 1058 "data/maps/LittlerootTown/scripts.pory"
-	.string "Name it?$"
+LittleRootTown_EventScript_startertest1_fireball1_Text_3:
+# 1071 "data/maps/LittlerootTown/scripts.pory"
+	.string "It's TORCHIC.$"
 
 LittleRootTown_EventScript_startertest1_grassball1_Text_0:
-# 1076 "data/maps/LittlerootTown/scripts.pory"
+# 1083 "data/maps/LittlerootTown/scripts.pory"
 	.string "The grass Pokémon, TREECKO.$"
 
 LittleRootTown_EventScript_startertest1_grassball1_Text_1:
-# 1081 "data/maps/LittlerootTown/scripts.pory"
+# 1088 "data/maps/LittlerootTown/scripts.pory"
 	.string "You chose TREECKO!$"
 
+LittleRootTown_EventScript_startertest1_grassball1_Text_2:
+# 1109 "data/maps/LittlerootTown/scripts.pory"
+	.string "It's TREECKO.$"
+
 LittleRootTown_EventScript_startertest1_waterball1_Text_0:
-# 1107 "data/maps/LittlerootTown/scripts.pory"
+# 1121 "data/maps/LittlerootTown/scripts.pory"
 	.string "The water Pokémon, MUDKIP.$"
 
 LittleRootTown_EventScript_startertest1_waterball1_Text_1:
-# 1112 "data/maps/LittlerootTown/scripts.pory"
+# 1126 "data/maps/LittlerootTown/scripts.pory"
 	.string "You chose MUDKIP!$"
+
+LittleRootTown_EventScript_startertest1_waterball1_Text_2:
+# 1147 "data/maps/LittlerootTown/scripts.pory"
+	.string "It's MUDKIP.$"

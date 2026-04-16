@@ -664,9 +664,9 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_FIRESTARTER  0x264 // starter test 1 + renaming flags test i guess!
-#define FLAG_GRASSSTARTER  0x265 // starter test 2
-#define FLAG_WATERSTARTER  0x266 // starter test 2
+#define FLAG_CHOSE_FIRE    0x264 // starter test 1 + renaming flags test i guess!
+#define FLAG_CHOSE_GRASS   0x265 // starter test
+#define FLAG_CHOSE_WATER   0x266 // starter test
 #define FLAG_UNUSED_0x267  0x267 // Unused Flag
 #define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
